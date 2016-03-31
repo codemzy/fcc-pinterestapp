@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var mongo = require('mongodb').MongoClient;
-var routes = require('./routes/index.js');
+var routes = require('./routes/routes.js');
 var passport = require('passport');
 var session = require('express-session');
 
