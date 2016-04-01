@@ -31,3 +31,28 @@ main {
 }
 
 /*IMAGES*/
+
+
+
+/*MASONRY*/
+
+.grid {
+    width: 100%;
+}
+
+.grid-item { 
+  width: 200px; 
+  line-height: 0px;
+  font-size: 0px;
+}
+
+.grid-item .responsive-img {
+  width: 100%;
+}
+
+@media only screen and (max-width : 599px),
+only screen and (max-device-width : 599px){
+ .grid-item {
+ width: 100%;
+ }
+}
