@@ -16,7 +16,7 @@
     "passport-twitter": "~1.0.4"
   },
   "engines": {
-    "node": "4.2.4"
+    "node": "4.4.0"
   },
   "scripts": {
     "start": "node server.js"
