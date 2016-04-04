@@ -1,90 +1,22 @@
-<div class="container">
+
     
-    <div class="center-align">
-        <img id="finterest" class="responsive-img" src="/public/img/finterest.png" />
-    </div>
-    
-    <div class="grid">
-      
-       <div class="grid-item">
-         <img class="responsive-img" src="http://netdna.webdesignerdepot.com/uploads/2013/11/picjumbo.com_DSC_3274.jpg" alt="" />
-       </div>
-    
-       <div class="grid-item">
-         <img class="responsive-img" src="http://netdna.webdesignerdepot.com/uploads/2013/11/picjumbo.com_IMG_0499.jpg" alt="" />
-       </div>
-    
-       <div class="grid-item">
-         <img class="responsive-img" src="http://netdna.webdesignerdepot.com/uploads/2013/11/picjumbo.com_IMG_1166.jpg" alt="" />
-       </div>
-      
-       <div class="grid-item">
-         <img class="responsive-img" src="http://netdna.webdesignerdepot.com/uploads/2013/11/picjumbo.com_IMG_1275.jpg" alt="" />
-       </div>
-    
-       <div class="grid-item">
-         <img class="responsive-img"  src="http://netdna.webdesignerdepot.com/uploads/2013/11/picjumbo.com_IMG_3130.jpg" alt="" />
-       </div>
-    
-       <div class="grid-item">
-         <img class="responsive-img" src="http://netdna.webdesignerdepot.com/uploads/2013/11/picjumbo.com_IMG_9998.jpg" alt="" />
-       </div>
-      
-       <div class="grid-item">
-         <img class="responsive-img"  src="http://netdna.webdesignerdepot.com/uploads/2013/11/picjumbo.com_IMG_3186.jpg" alt="" />
-       </div>
-    
-       <div class="grid-item">
-         <img class="responsive-img" src="http://netdna.webdesignerdepot.com/uploads/2013/11/picjumbo.com_IMG_4828.jpg" alt="" />
-       </div>
-      
-       <div class="grid-item">
-         <img class="responsive-img" src="http://netdna.webdesignerdepot.com/uploads/2013/11/picjumbo.com_IMG_8687.jpg" alt="" />
-       </div>
-      
-       <div class="grid-item">
-         <img class="responsive-img" src="http://netdna.webdesignerdepot.com/uploads/2013/11/picjumbo.com_IMG_9542.jpg" alt="" />
-       </div>
-    
-       <div class="grid-item">
-         <img class="responsive-img"  src="http://netdna.webdesignerdepot.com/uploads/2013/11/picjumbo.com_IMG_9857.jpg" alt="" />
-       </div>
-    
-       <div class="grid-item">
-         <img class="responsive-img" src="http://netdna.webdesignerdepot.com/uploads/2013/11/picjumbo.com_DSC_3274.jpg" alt="" />
-       </div>
-    
-       <div class="grid-item">
-         <img class="responsive-img" src="http://netdna.webdesignerdepot.com/uploads/2013/11/picjumbo.com_IMG_0499.jpg" alt="" />
-       </div>
-    
-       <div class="grid-item">
-         <img class="responsive-img" src="http://netdna.webdesignerdepot.com/uploads/2013/11/picjumbo.com_IMG_1166.jpg" alt="" />
-       </div>
-      
-       <div class="grid-item">
-         <img class="responsive-img" src="http://netdna.webdesignerdepot.com/uploads/2013/11/picjumbo.com_IMG_1275.jpg" alt="" />
-       </div>
-    
-       <div class="grid-item">
-         <img class="responsive-img"  src="http://netdna.webdesignerdepot.com/uploads/2013/11/picjumbo.com_IMG_3130.jpg" alt="" />
-       </div>
-    
-       <div class="grid-item">
-         <img class="responsive-img" src="http://netdna.webdesignerdepot.com/uploads/2013/11/picjumbo.com_IMG_9998.jpg" alt="" />
-       </div>
-      
-       <div class="grid-item">
-         <img class="responsive-img"  src="http://netdna.webdesignerdepot.com/uploads/2013/11/picjumbo.com_IMG_3186.jpg" alt="" />
-       </div>
-    
-       <div class="grid-item">
-         <img class="responsive-img" src="http://netdna.webdesignerdepot.com/uploads/2013/11/picjumbo.com_IMG_4828.jpg" alt="" />
-       </div>
-     
-    </div>
-    
-    TRY THIS NEXT
-    http://ignitersworld.com/lab/angulargrid/index.html#documentation
-    
+<div class="center-align">
+    <img id="finterest" class="responsive-img" src="/public/img/finterest.png" />
 </div>
+
+<ul class="grid" masonry="true">
+    <li ng-repeat="item in items">
+        <div class="card">
+            <div class="card-image" ng-mouseenter="titleShow = true" ng-mouseleave="titleShow = false" ng-click="titleShow = false">
+                <img class="activator" ng-src="{{item.url}}">
+                <span class="card-title title-hover" ng-show="titleShow">{{ item.name }}</span>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4"><i class="fa fa-times"></i></span>
+              <p>{{ item.name }}.</p>
+            </div>
+        </div>
+    </li>
+</ul>
+
+    
