@@ -2,6 +2,7 @@
 body {
     padding-top: 100px;
     background-color: #1e88e5;
+    color: #ffffff;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -28,6 +29,10 @@ main {
   width: auto;
   padding: 10px 20px;
   color: #ffffff;
+}
+
+.btn-mg {
+  margin: 10px;
 }
 
 /*IMAGES*/
@@ -67,6 +72,7 @@ only screen and (max-device-width : 599px){
 }
 
 .card {
+  border-radius: 0px;
   margin-bottom: -10px;
 }
 

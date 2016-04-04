@@ -22,7 +22,7 @@ mongo.connect(process.env.MONGO_URL, function (error, db) {
 
     // required for passport
     app.use(session({
-    	secret: 'secretGoat',
+    	secret: 'secretShark',
     	resave: false,
     	saveUninitialized: true
     }));
