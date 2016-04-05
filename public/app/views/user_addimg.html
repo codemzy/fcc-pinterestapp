@@ -2,26 +2,31 @@
     
     
 <h1>Add a new image.</h1>
-    
-    
-<form ng-submit="updateUser()" class="col s12 blue center-align">
 
-    <div class="row form-name">
-        <div class="input-field col s12">
-          <input ng-model="formData.imgUrl" id="url" type="text" name="url" required="true">
-          <label for="url">Image Url</label>
+<div ng-if="helpForm" class="col s12 white blue-text center-align"> 
+ <p class="flow-text">{{ helpForm }}</p>
+</div>
+    
+<div class="col s12 blue center-align">  
+    <form ng-submit="addImage()">
+    
+        <div class="row form-name">
+            <div class="input-field col s12">
+              <input ng-model="formData.imgUrl" id="url" type="text" name="url" required="true">
+              <label for="url">Image Url</label>
+            </div>
         </div>
-    </div>
-    
-    <div class="row form-name">
-        <div class="input-field col s12">
-          <input ng-model="formData.imgTitle" id="title" type="text" name="title" required="true">
-          <label for="title">Image Title / Description</label>
+        
+        <div class="row form-name">
+            <div class="input-field col s12">
+              <input ng-model="formData.imgTitle" id="title" type="text" name="title" required="true">
+              <label for="title">Image Title / Description</label>
+            </div>
         </div>
-    </div>
-    
-    <input type="submit" id="updateInfo" class="waves-effect waves-grey btn-flat cyan-text" value="Add Image" />
-    
-</form>
+        
+        <input type="submit" id="updateInfo" class="waves-effect waves-grey btn-large blue darken-3" value="Add Image" />
+        
+    </form>
+</div>
 
 </div>

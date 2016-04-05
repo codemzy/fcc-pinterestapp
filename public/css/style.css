@@ -81,3 +81,22 @@ only screen and (max-device-width : 599px){
   height: 101%;
 }
 
+/*FORMS*/
+
+/* label color */
+.input-field label {
+ color: #ffffff;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+ color: #ffffff;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+ border-bottom: 1px solid #ffffff;
+ box-shadow: 0 1px 0 0 #ffffff;
+}
+
+form {
+ padding: 40px;
+}
