@@ -34,7 +34,24 @@ module.exports = function (app, db, passport) {
         .get(isLoggedIn, function(req, res) {
 			res.json(req.user);
         });
-    
+    // add image to DB
+    app.route('/api/img/add')
+        .post(isLoggedIn, parseUrlencoded, function(req, res) {
+        	var userID = req.user._id;
+        	db.collection('images').insertOne({ "img_url": req.body.imgUrl, "img_title": req.body.imgTitle }, function(err, doc) {
+            	if (err) {
+            		console.log(err);
+            		res.status(400).json(err);
+            	} else {
+            		// add the activity to the user profile
+                    var today = new Date;
+                    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                    var month = months[today.getMonth()];
+                    db.collection('users').update({"_id": userID}, { $push: { "activity": { $each: [{ "title": req.body.imgTitle, "type": "added an image", "date": month + " " + today.getDate() + ", " + today.getFullYear() }], $position: 0, $slice: 50 } } });
+            		res.json({"message": "You added an image to your account"});
+            	}
+        	});
+        });
 
         
     // authentication routes (FIRST LOG IN)

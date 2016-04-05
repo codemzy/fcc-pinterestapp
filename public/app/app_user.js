@@ -13,6 +13,10 @@ angular.module('FinterestApp', ['ngRoute'])
     templateUrl: '/public/app/views/user_profile.html',
     controller: 'ProfileController'
     })
+    .when('/add', {
+    templateUrl: '/public/app/views/user_addimg.html',
+    controller: 'User_ImgAddController'
+    })
     // default
     .otherwise({ 
       redirectTo: '/' 
