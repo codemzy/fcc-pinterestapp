@@ -26,7 +26,18 @@ module.exports = function (app, db, passport) {
         });
         
     // ANON APIS
-
+    // get all images limit to 100 at a time
+    app.route('/api/imgs/all')
+    	.get(function(req, res) {
+    		db.collection('images').find().sort({$natural:-1}).limit(100).toArray(function(err, results) {
+            	if (err) {
+            		console.log(err);
+            		res.status(400).json(err);
+            	} else {
+            		res.json(results);
+            	}
+    		});
+    	});
         
     // LOGGED IN APIS
     // get user data

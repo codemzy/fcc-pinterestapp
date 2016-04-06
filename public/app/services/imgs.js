@@ -1,5 +1,15 @@
 angular.module('FinterestApp')
 .factory('imgs', ['$http', function($http) {
+    // get all images (first 100)
+    this.getImgs = function() {
+      return $http.get('/api/imgs/all')
+                .success(function(data) {
+                  return data;
+                })
+                .error(function(err) {
+                  return err;
+                });
+    };
     // add new IMG
     this.addImg = function(data) {
     return $http({

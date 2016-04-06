@@ -1,5 +1,8 @@
 angular.module('FinterestApp')
-.controller('HomeController', ['$scope', function($scope) {
+.controller('HomeController', ['$scope', 'imgs', function($scope, imgs) {
+    imgs.getImgs().success(function(data) {
+      $scope.items = data;
+    });
     $scope.items = [
             { url: "http://netdna.webdesignerdepot.com/uploads/2013/11/picjumbo.com_DSC_3274.jpg", name: "Whateves" },
             { url: "http://netdna.webdesignerdepot.com/uploads/2013/11/picjumbo.com_IMG_0499.jpg", name: "Whateves" },
