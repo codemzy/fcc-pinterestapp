@@ -9,6 +9,15 @@ body {
     background: linear-gradient( rgba(30,136,229,0.70), rgba(30,136,229,0.70) ), url(/public/img/bg_sea.jpg);
 }
 
+.loggedinbody {
+    padding-top: 0px;
+}
+
+nav {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 main {
     flex: 1 0 auto;
 }
