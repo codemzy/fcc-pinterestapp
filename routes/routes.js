@@ -38,6 +38,7 @@ module.exports = function (app, db, passport) {
             	}
     		});
     	});
+    // BONUS could page through (with skip) images then limit to 100 for each page, as a bonus to improve the app
         
     // LOGGED IN APIS
     // get user data
@@ -49,7 +50,7 @@ module.exports = function (app, db, passport) {
     app.route('/api/img/add')
         .post(isLoggedIn, parseUrlencoded, function(req, res) {
         	var userID = req.user._id;
-        	db.collection('images').insertOne({ "img_url": req.body.imgUrl, "img_title": req.body.imgTitle }, function(err, doc) {
+        	db.collection('images').insertOne({ "img_url": req.body.imgUrl, "img_title": req.body.imgTitle, "user": userID }, function(err, doc) {
             	if (err) {
             		console.log(err);
             		res.status(400).json(err);
