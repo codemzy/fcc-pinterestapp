@@ -46,6 +46,19 @@ module.exports = function (app, db, passport) {
         .get(isLoggedIn, function(req, res) {
 			res.json(req.user);
         });
+    // get user my images limit to 100 at a time
+    app.route('/api/imgs/my')
+    	.get(function(req, res) {
+        	var userID = req.user._id;
+    		db.collection('images').find({ "user": userID }).sort({$natural:-1}).limit(100).toArray(function(err, results) {
+            	if (err) {
+            		console.log(err);
+            		res.status(400).json(err);
+            	} else {
+            		res.json(results);
+            	}
+    		});
+    	});
     // add image to DB
     app.route('/api/img/add')
         .post(isLoggedIn, parseUrlencoded, function(req, res) {

@@ -10,6 +10,16 @@ angular.module('FinterestApp')
                   return err;
                 });
     };
+    // get user images (first 100)
+    this.getMyImgs = function() {
+      return $http.get('/api/imgs/my')
+                .success(function(data) {
+                  return data;
+                })
+                .error(function(err) {
+                  return err;
+                });
+    };
     // add new IMG
     this.addImg = function(data) {
     return $http({

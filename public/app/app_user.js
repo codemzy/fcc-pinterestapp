@@ -5,8 +5,8 @@ angular.module('FinterestApp', ['ngRoute'])
 .config(function($routeProvider, $locationProvider) {
   $routeProvider
     .when('/', {
-    templateUrl: '/public/app/views/user_profile.html',
-    controller: 'ProfileController'
+    templateUrl: '/public/app/views/home.html',
+    controller: 'HomeController'
     })
     // logged in routes
     .when('/profile', {
