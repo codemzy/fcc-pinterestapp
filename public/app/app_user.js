@@ -13,6 +13,10 @@ angular.module('FinterestApp', ['ngRoute'])
     templateUrl: '/public/app/views/user_profile.html',
     controller: 'ProfileController'
     })
+    .when('/images/my', {
+    templateUrl: '/public/app/views/user_myimg.html',
+    controller: 'User_ImgMyController'
+    })
     .when('/add', {
     templateUrl: '/public/app/views/user_addimg.html',
     controller: 'User_ImgAddController'
