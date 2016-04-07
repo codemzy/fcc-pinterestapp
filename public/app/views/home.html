@@ -15,11 +15,7 @@
         <div class="card">
             <div class="card-image" ng-mouseenter="titleShow = true" ng-mouseleave="titleShow = false" ng-click="titleShow = false">
                 <img ng-click="showModal(item.img_url)" ng-src="{{item.img_url}}">
-                <span class="card-title title-hover" ng-show="titleShow">{{ item.img_title }}</span>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4"><i class="fa fa-times"></i></span>
-              <p>{{ item.img_title }}.</p>
+                <span class="card-title title-hover" ng-click="showModal(item.img_url)" ng-show="titleShow">{{ item.img_title }}</span>
             </div>
         </div>
     </div>
