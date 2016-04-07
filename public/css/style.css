@@ -62,7 +62,9 @@ main {
 /* testing new grid */
 
 .grid-item { 
-  width: 200px; 
+  display: inline-block;
+  width: 200px;
+  height: auto;
 }
 
 .grid-item .responsive-img {
