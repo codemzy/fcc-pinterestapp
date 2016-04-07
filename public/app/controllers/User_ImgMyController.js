@@ -10,10 +10,34 @@ angular.module('FinterestApp')
             angular.element('.grid').masonry({
               // options
               itemSelector: '.grid-item',
-              columnWidth: 200
+              columnWidth: 300
             });
           });
       }, 10);
     });
     $scope.titleShow = false;
+    angular.element('.modal-trigger').leanModal();
+    // FUNCTIONS TO DELETE IMG
+    $scope.deleteModal = function(url) {
+      $scope.deleteRequestID = url;
+      angular.element('#modalDelete').openModal();
+    };
+    // delete img
+    $scope.deleteImage = function(id) {
+        var deleteIndex =  function(index) {
+            $scope.items.splice(index, 1);
+        };
+        // to do the other bit of front end
+        // send the img data to the back end
+        imgs.deleteIMG(id).success(function(data){
+            $scope.message = data.message;
+            // remove the book
+            for (var i = 0; i < $scope.items.length; i++) {
+                if ($scope.items[i].img_url == id) {
+                    $scope.items[i].deleteRequest = false;
+                    deleteIndex(i);
+                }
+            }
+        });
+    };
 }]);

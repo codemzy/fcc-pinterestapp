@@ -35,5 +35,15 @@ angular.module('FinterestApp')
                 return data;
               });
     };
+    // delete IMG
+    this.deleteIMG = function(id) {
+      return $http.delete('/api/img/delete/' + id)
+                .success(function(data) {
+                  return data;
+                })
+                .error(function(err) {
+                  return err;
+                });
+    };
     return this;
 }]);
