@@ -8,6 +8,9 @@ angular.module('FinterestApp')
         var imgData = $.param($scope.formData);
         imgs.addImg(imgData).success(function(data) {
           $scope.helpForm = data.message;
+          // clear the form fields on success
+          $scope.formData.imgTitle = "";
+          $scope.formData.imgUrl = "";
         });
       }
     };
