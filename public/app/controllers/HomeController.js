@@ -16,6 +16,11 @@ angular.module('FinterestApp')
       }, 10);
     });
     $scope.titleShow = false;
+    // FUNCTION TO SHOW IMAGE ON MODAL
+    $scope.showModal = function(url) {
+      $scope.imgShowID = url;
+      angular.element('#modalImage').openModal();
+    };
     /* REMOVED SO CAN USE NGREPEAT 
     for (var i = 0; i < $scope.items.length; i++) {
           var $content = $( '<div class="grid-item"><img class="responsive-img" src="' + $scope.items[i].url + '" alt="" /></div>' );
