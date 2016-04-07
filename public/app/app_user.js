@@ -5,6 +5,10 @@ angular.module('FinterestApp', ['ngRoute'])
 .config(function($routeProvider, $locationProvider) {
   $routeProvider
     .when('/', {
+    templateUrl: '/public/app/views/user_myimg.html',
+    controller: 'User_ImgMyController'
+    })
+    .when('/front', {
     templateUrl: '/public/app/views/home.html',
     controller: 'HomeController'
     })
