@@ -82,15 +82,12 @@ module.exports = function (app, db, passport) {
     	.delete(isLoggedIn, function(req, res) {
         	var userID = req.user._id;
         	var imgurl = req.params.imgurl;
-        	console.log("imgurl: " + imgurl);
         	db.collection('images').findAndModify({ "img_url": imgurl, "user": userID }, { "_id": 1 }, { remove: true }, function(err, doc) {
             	if (err) {
             		console.log(err);
             		res.status(400).json(err);
             	} else {
             		// add the activity to the user profile
-            		console.log("doc: " + doc);
-            		console.log(doc.value);
                     var today = new Date;
                     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
                     var month = months[today.getMonth()];

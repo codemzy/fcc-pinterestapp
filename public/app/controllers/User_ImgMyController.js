@@ -34,7 +34,6 @@ angular.module('FinterestApp')
             // remove the book
             for (var i = 0; i < $scope.items.length; i++) {
                 if ($scope.items[i].img_url == id) {
-                    $scope.items[i].deleteRequest = false;
                     deleteIndex(i);
                 }
             }
