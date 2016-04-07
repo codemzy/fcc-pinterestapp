@@ -84,8 +84,8 @@ only screen and (max-device-width : 599px){
   margin-bottom: -10px;
 }
 
-.missing-image {
-  min-height: 200px;
+.card .card-image img {
+  border-radius: 0px;
 }
 
 .card .card-reveal {
