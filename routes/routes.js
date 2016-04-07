@@ -48,7 +48,7 @@ module.exports = function (app, db, passport) {
         });
     // get user my images limit to 100 at a time
     app.route('/api/imgs/my')
-    	.get(function(req, res) {
+    	.get(isLoggedIn, function(req, res) {
         	var userID = req.user._id;
     		db.collection('images').find({ "user": userID }).sort({$natural:-1}).limit(100).toArray(function(err, results) {
             	if (err) {
@@ -77,6 +77,25 @@ module.exports = function (app, db, passport) {
             	}
         	});
         });
+    // delete img from DB
+    app.route('/api/img/delete/:imgurl')
+    	.delete(isLoggedIn, function(req, res) {
+        	var userID = req.user._id;
+        	var imgurl = req.params.imgurl;
+        	db.collection('images').findAndModify({ "img_url": imgurl, "user": userID }, { remove: true }, function(err, doc) {
+            	if (err) {
+            		console.log(err);
+            		res.status(400).json(err);
+            	} else {
+            		// add the activity to the user profile
+                    var today = new Date;
+                    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                    var month = months[today.getMonth()];
+                    db.collection('users').update({"_id": userID}, { $push: { "activity": { $each: [{ "title": doc.value.img_title, "type": "deleted an image", "date": month + " " + today.getDate() + ", " + today.getFullYear() }], $position: 0, $slice: 50 } } });
+            		res.json({"message": "You deleted an image from your account"});
+            	}
+        	});
+    	});
 
         
     // authentication routes (FIRST LOG IN)
