@@ -55,17 +55,6 @@ main {
 
 /*MASONRY*/
 
-
-
-.grid li {
-  display: inline-block;
-  width: 200px;
-  height: auto;
-  min-height: 100px;
-}
-
-/* testing new grid */
-
 .grid-item { 
   display: inline-block;
   width: 300px;
@@ -83,15 +72,6 @@ only screen and (max-device-width : 599px){
  }
 }
 
-/* end of testing new grid */
-
-@media only screen and (max-width : 599px),
-only screen and (max-device-width : 599px){
- .grid li {
- width: 100%;
- }
-}
-
 .title-hover {
   background: linear-gradient( rgba(30,136,229,0.70), rgba(30,136,229,0.70) );
   width: 100%;
@@ -102,6 +82,10 @@ only screen and (max-device-width : 599px){
 .card {
   border-radius: 0px;
   margin-bottom: -10px;
+}
+
+.missing-image {
+  min-height: 200px;
 }
 
 .card .card-reveal {
