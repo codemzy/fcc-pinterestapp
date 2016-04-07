@@ -1,6 +1,8 @@
 angular.module('FinterestApp')
 .controller('HomeController', ['$scope', 'imgs', function($scope, imgs) {
+    $scope.loading = true;
     imgs.getImgs().success(function(data) {
+      $scope.loading = false;
       $scope.items = data;
       // apply the masonry grid to the view
       setTimeout(function () {
