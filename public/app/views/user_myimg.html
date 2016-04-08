@@ -10,6 +10,11 @@
   </div>
 </div>
 
+<div class="container center-align" ng-if="!items[0]">
+    <h3>You haven't added any pictures to your account yet!</h3>
+    <a href="#/add" class="waves-effect waves-light btn blue lighten-1"><i class="fa fa-plus"></i> Add Image</a>
+</div>
+
 
 <div class="grid center-align">
     <div class="grid-item" ng-repeat="item in items">
