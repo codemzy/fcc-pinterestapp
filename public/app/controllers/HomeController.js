@@ -14,6 +14,16 @@ angular.module('FinterestApp')
             });
           });
       }, 10);
+      // add second load to fix bugs sometimes on first load of layout
+      setTimeout(function () {
+          $scope.$apply(function () {
+            angular.element('.grid').masonry({
+              // options
+              itemSelector: '.grid-item',
+              columnWidth: 300
+            });
+          });
+      }, 100);
     });
     $scope.titleShow = false;
     // FUNCTION TO SHOW IMAGE ON MODAL

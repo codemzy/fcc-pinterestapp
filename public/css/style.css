@@ -86,6 +86,7 @@ only screen and (max-device-width : 599px){
 
 .card .card-image img {
   border-radius: 0px;
+  min-width: 200px;
 }
 
 .card .card-reveal {
