@@ -11,7 +11,7 @@ User Stories:
 5. As an unauthenticated user, I can browse other users' walls of images.
 6. As an authenticated user, if I upload an image that is broken, it will be replaced by a placeholder image.
 
-View at: [https://fcc-pinterest.glitch.me](https://fcc-pinterest.glitch.me)
+View at: [https://finterest.glitch.me](https://finterest.glitch.me)
 
 If you create a copy it needs the following env variables:
 
